@@ -2,9 +2,11 @@ import { createRoot } from "react-dom/client";
 
 const App = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-      <h2>Omic</h2>
+    <div className="app">
+      <main className="content">
+        <h1>Hello World</h1>
+        <h2>Omic</h2>
+      </main>
     </div>
   );
 };
