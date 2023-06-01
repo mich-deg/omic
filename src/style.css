@@ -5,6 +5,7 @@ body,
 #root,
 .app,
 .content {
+  /* 100% of the viewport height and width */
   height: 100%;
   width: 100%;
   font-family: "Source Sans Pro", sans-serif;
@@ -15,21 +16,22 @@ body,
   position: relative;
 }
 
+/* tells the browser how the bar will look */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
+/* tells the browser how will the path of the handle will look like */
 ::-webkit-scrollbar-track {
   background: #e0e0e0;
 }
 
-/* Handle */
+/* tells the browser how the scrollable handle would look like */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
 
-/* Handle on hover */
+/* tells the browser how the scrollable handle on hover would look like */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }

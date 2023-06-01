@@ -1,15 +1,34 @@
-import ReactDom from "react-dom";
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
+import { Route, Routes } from "react-router-dom";
+
+import { ColorModeContext, useMode } from "./theme";
+import TopBar from "./pages/navbar/TopBar";
+import NavSideBar from "./pages/navbar/NavSideBar";
+import Dashboard from "./pages/DashboardScreen";
 
 const App = () => {
+  const [theme, colorMode] = useMode();
+
   return (
-    <div className="app">
-      <main className="content">
-        <h1>Hello World</h1>
-        <h2>Omic</h2>
-      </main>
-    </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="app">
+          <NavSideBar />
+          <main className="content">
+            <TopBar />
+            <Routes>
+              <Route path="dashboard" element={<Dashboard />} />
+              {/* <Route path="dashboard" element={<Dashboard />} />
+              <Route path="transactions" element={<Transactions />} /> */}
+            </Routes>
+          </main>
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 };
 
-const container = document.getElementById("root");
-ReactDom.render(<App />, container);
+export default App;
