@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useTheme } from "@material-ui/core/styles";
-import { IconButton, Box, Button, Select } from "@material-ui/core";
+import { IconButton, Box, Select } from "@material-ui/core";
 
 import {
   RiLayoutLeft2Line,
@@ -11,9 +11,9 @@ import {
   RiGitCommitLine,
 } from "react-icons/ri";
 
-// import SearchIcon from "@material-ui/icons/Search";
-
 import { ColorModeContext } from "../../theme";
+
+import OmicButton from "../../components/Button";
 
 const TopBar = () => {
   const theme = useTheme();
@@ -55,21 +55,13 @@ const TopBar = () => {
             <option value="dev2">Dev 2</option>
           </Select>
         </Box>
-
-        <Button
+        <OmicButton
           size="small"
-          startIcon={<RiGitCommitLine />}
-          style={{
-            color: "#ffffff",
-            borderRadius: "6px",
-            background: "#3354FB",
-            alignItems: "center",
-            textTransform: "capitalize",
-          }}
           variant="contained"
+          startIcon={<RiGitCommitLine />}
         >
           Commit (2 files)
-        </Button>
+        </OmicButton>
       </Box>
       <Box display="flex">
         <IconButton onClick={colorMode.toggleColorMode}>

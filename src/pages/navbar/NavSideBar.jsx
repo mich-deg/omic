@@ -85,12 +85,10 @@ const NavSideBar = () => {
                     style={{ fontSize: 24, color: colors.primary[100] }}
                   />
                 }
-              >
-                <h4>Eye</h4>
-              </MenuItem>
-              <MenuItem icon={<RiSearchLine style={{ fontSize: 24 }} />}>
-                <h4>Search</h4>
-              </MenuItem>
+              ></MenuItem>
+              <MenuItem
+                icon={<RiSearchLine style={{ fontSize: 24 }} />}
+              ></MenuItem>
               <MenuItem icon={<BsDashLg style={{ fontSize: 24 }} />}>
                 {" "}
               </MenuItem>
